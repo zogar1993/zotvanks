@@ -9,21 +9,22 @@ export default function Post({ post }: any) {
 	return (
 
 		<Layout>
-		<div>
-			<Head>
-				<title>{post.title}</title>
-			</Head>
+			<div>
+				<Head>
+					<title>{post.title}</title>
+				</Head>
 
-			<Link href={`/`}>
-				<a>Back to Menu</a>
-			</Link>
-			<ReactMarkdown
-				children={post.content}
-				components={{
-					code: ({...props}: any) => <Code {...props}/>
-				}}
-			/>
-		</div>
+				<Link href={`/`}>
+					<a>Back to Menu</a>
+				</Link>
+				<ReactMarkdown
+					components={{
+						code: ({...props}: any) => <Code {...props}/>
+					}}
+				>
+					{post.content}
+				</ReactMarkdown>
+			</div>
 		</Layout>
 	)
 }
