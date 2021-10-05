@@ -2,7 +2,6 @@ import {getPosts} from "../lib/posts"
 import Layout from "../components/Layout"
 import Head from 'next/head'
 //import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
 export async function getStaticProps() {
@@ -31,10 +30,6 @@ export default function Home({ posts }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
       </main>
       <section>
         <ul>

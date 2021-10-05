@@ -7,9 +7,8 @@ import Head from 'next/head'
 
 export default function Post({ post }: any) {
 	return (
-
 		<Layout>
-			<div>
+			<Article>
 				<Head>
 					<title>{post.title}</title>
 				</Head>
@@ -19,16 +18,16 @@ export default function Post({ post }: any) {
 				</Link>
 				<ReactMarkdown
 					components={{
-						code: ({...props}: any) => <Code {...props}/>
+						code: ({...props}: any) => <Code {...props}/>,
+						a: ({...props}: any) => <Anchor {...props}/>
 					}}
 				>
 					{post.content}
 				</ReactMarkdown>
-			</div>
+			</Article>
 		</Layout>
 	)
 }
-//<div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
 
 export async function getStaticProps({ params }: any) {
 	const post = await getPostData(params.id)
@@ -47,6 +46,17 @@ export async function getStaticPaths() {
 	}
 }
 
+const Article = styled.article`
+  width: 672px;
+  padding: 48px;
+  background-color: white;
+`
+
 const Code = styled.code`
   background: lightgray;
+`
+
+const Anchor = styled.a`
+  color: #08317e;
+  text-decoration: underline;
 `

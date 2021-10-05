@@ -8,7 +8,8 @@ import styled from "styled-components"
 //`
 
 const Layout = styled.div`
-  margin: 16px;
+  max-width: 960px;
+  margin: 0 auto;
 `
 export default Layout
 //TODO CSS Dying when F5

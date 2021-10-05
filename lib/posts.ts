@@ -1,8 +1,8 @@
 const contentful = require("contentful")
 
 const client = contentful.createClient({
-	space: "3at70d2ge1j0",
-	accessToken: "zK4Gha6qR7w9-gXTq7wvpbfWu-oraL-Vb2uatkYMXAQ"
+	space: process.env.CONTENTFUL_SPACE,
+	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 });
 //TODO make queries more performant with graphql
 export async function getPosts() {
