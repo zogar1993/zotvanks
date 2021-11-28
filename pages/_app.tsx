@@ -39,18 +39,18 @@ const AvatarFrame = styled.div`
 	border-radius: 4px;
 `
 
-const BioAside = styled.aside`
+export const BioAside = styled.aside`
 	padding-top: 48px;
   width: 300px;
 `
 
-const Layout = styled.div`
+export const Layout = styled.div`
 	display: flex;
   max-width: 960px;
   margin: 0 auto;
 `
 
-const MainContent = styled.main`
+export const MainContent = styled.main`
   background: white;
   width: 672px;
   min-height: 100vh;
